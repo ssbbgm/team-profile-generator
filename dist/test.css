@@ -1,3 +1,7 @@
+* {
+    font-family: 'Source Code Pro', monospace;
+}
+
 /* Style the header with a grey background and some padding */
 header {
     overflow: hidden;
