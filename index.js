@@ -6,6 +6,11 @@ const validator = require('email-validator')
 //get html Info
 const generateHTML = require('./src/generateHTML');
 
+//get the classes 
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+
 //get manager's info
 
 const addManager = () => {
@@ -62,7 +67,10 @@ const addManager = () => {
         // fs.writeFile('index.html', htmlPageContent, (err) =>
         //   err ? console.log(err) : console.log('Successfully created index.html!')
         // );
-        console.log(data);
+        let teamArray = [];
+        const manager = new Manager(data);
+        console.log(manager);
+        
       });
     
 }
@@ -138,6 +146,12 @@ const addTeamMember = () => {
                 }
                 return true;
                }
+        },
+        {
+            type: 'confirm',
+            name: 'addMoreTeamMembers',
+            message: 'Would you like to add more team members?',
+            default: false
         }
     ])
     .then((data) => {
@@ -151,5 +165,5 @@ const addTeamMember = () => {
     
 }
 
-// addManager()
-addTeamMember()
+addManager()
+// addTeamMember()
