@@ -16,7 +16,7 @@ const addManager = () => {
           message: 'What is the manager\'s name?',
           name: 'name',
           validate: function (name) {
-              if (name.length < 1) {
+              if (name.length <= 1) {
                   return console.log("Please provide a manager's name!");
               }
               return true;
@@ -84,18 +84,18 @@ const addTeamMember = () => {
         },
         {
           type: 'input',
-          message: 'What is the manager\'s name?',
+          message: 'What is the team member\'s name?',
           name: 'name',
           validate: function (name) {
-              if (name.length < 1) {
-                  return console.log("Please provide a manager's name!");
+              if (name.length <= 1) {
+                  return console.log("Please provide a team member's name!");
               }
               return true;
             }
         },
         {
           type: 'input',
-          message: 'Please provide the manager\'s ID. ',
+          message: 'Please provide the team member\'s ID. ',
           name: 'id',
           validate: function (id) {
               if (isNaN(id)) {
@@ -106,7 +106,7 @@ const addTeamMember = () => {
         },
         {
         type: 'input',
-        message: 'Please provide the manager\'s email. ',
+        message: 'Please provide the team member\'s email. ',
         name: 'email',
         validate: function (email) {
             if (!validator.validate(email)) {
@@ -117,11 +117,24 @@ const addTeamMember = () => {
         },
         {
             type: 'input',
-            message: 'Please provide the manager\'s office number. ',
-            name: 'office',
-            validate: function (office) {
-                if (isNaN(office)) {
-                    return console.log("Please provide the information in number form!");
+            message: 'Please provide the team member\'s github username (without the @). ',
+            name: 'github',
+            when: (input) => input.role === "Engineer",
+            validate: function (github) {
+                if (github.length <= 1) {
+                    return console.log("Please enter the employee's github username!");
+                }
+                return true;
+               }
+        },
+        {
+            type: 'input',
+            message: 'Please provide the team member\'s github username (without the @). ',
+            name: 'github',
+            when: (input) => input.role === "Engineer",
+            validate: function (github) {
+                if (github.length <= 1) {
+                    return console.log("Please enter the employee's github username!");
                 }
                 return true;
                }
@@ -138,4 +151,5 @@ const addTeamMember = () => {
     
 }
 
-addManager()
+// addManager()
+addTeamMember()
