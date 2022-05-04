@@ -129,12 +129,12 @@ const addTeamMember = () => {
         },
         {
             type: 'input',
-            message: 'Please provide the team member\'s github username (without the @). ',
-            name: 'github',
-            when: (input) => input.role === "Engineer",
-            validate: function (github) {
-                if (github.length <= 1) {
-                    return console.log("Please enter the employee's github username!");
+            message: 'Please provide the team member\'s school. ',
+            name: 'school',
+            when: (input) => input.role === "Intern",
+            validate: function (school) {
+                if (school.length <= 1) {
+                    return console.log("Please enter the employee's school name!");
                 }
                 return true;
                }
