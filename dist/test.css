@@ -1,0 +1,11 @@
+/* Style the header with a grey background and some padding */
+header {
+    overflow: hidden;
+    display: flex;
+    color: white;
+    background-color: red;
+    padding: 40px 10px;
+    font-size: 40px;
+    justify-content: center;
+  }
+  
