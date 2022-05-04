@@ -7,9 +7,9 @@ const validator = require('email-validator')
 const generateHTML = require('./src/generateHTML');
 
 //get the classes 
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 //get manager's info
 
