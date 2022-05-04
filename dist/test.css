@@ -2,6 +2,15 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+    color: white;
+}
+
 /* Style the header with a grey background and some padding */
 header {
     overflow: hidden;
