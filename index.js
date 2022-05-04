@@ -61,16 +61,20 @@ const addManager = () => {
                }
         }
     ])
-    .then((data) => {
+    .then(data => {
         // const htmlPageContent = generateHTML(answers);
     
         // fs.writeFile('index.html', htmlPageContent, (err) =>
         //   err ? console.log(err) : console.log('Successfully created index.html!')
         // );
-        let teamArray = [];
-        const manager = new Manager(data);
+        const name = data.name;
+        const id = data.id;
+        const email = data.email;
+        const office = data.office; 
+
+        let manager = new Manager (name, id, email, office);
         console.log(manager);
-        
+
       });
     
 }
@@ -154,7 +158,7 @@ const addTeamMember = () => {
             default: false
         }
     ])
-    .then((data) => {
+    .then(data  => {
         // const htmlPageContent = generateHTML(answers);
     
         // fs.writeFile('index.html', htmlPageContent, (err) =>
