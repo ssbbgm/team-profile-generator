@@ -29,7 +29,7 @@ function renderEngineer(engineer){
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item id">ID: ${engineer.id}</li>
                     <li class="list-group-item email">Email: ${engineer.email}</li>
-                    <li class="list-group-item github">GitHub: ${engineer.github}</li>
+                    <li class="list-group-item github">GitHub:<a href='http://github.com/${engineer.github}' target='_blank'>${engineer.github}</a></li>
                 </ul>
             </div>
         </div>
