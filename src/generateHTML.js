@@ -17,9 +17,41 @@ function renderManager (manager){
 } 
 
 function renderEngineer(engineer){
-    
+    return `
+    <div class="p-2 bd-highlight">
+            <div class="card card-shadow col-lg-3" style="width: 14rem;">
+                <div class="card-body bg-primary">
+                    <h3 class="card-title">${engineer.name}</h3>
+                    <h4 class="card-text"><i class="fa-solid fa-glasses"></i> Engineer</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item id">ID: ${engineer.id}</li>
+                    <li class="list-group-item email">Email: ${engineer.email}</li>
+                    <li class="list-group-item github">GitHub: ${engineer.github}</li>
+                </ul>
+            </div>
+        </div>
+    `
 }
 
+
+function renderIntern(intern){
+    return `
+    <div class="p-2 bd-highlight">
+            <div class="card card-shadow col-md-4" style="width: 14rem;">
+                <div class="card-body bg-primary">
+                    <h3 class="card-title">${intern.name}</h3>
+                    <h4 class="card-text"><i class="fa-solid fa-graduation-cap"></i> Intern</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item id">ID: ${intern.id}</li>
+                    <li class="list-group-item email">Email: ${intern.email} </li>
+                    <li class="list-group-item school">School: ${intern.school}</li>
+                </ul>
+            </div>
+    </div>
+    `
+}
 
 
 function generateHTML(manager){
