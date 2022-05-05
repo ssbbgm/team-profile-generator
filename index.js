@@ -6,6 +6,7 @@ const validator = require('email-validator')
 //get html Info
 const generateHTML = require('./src/generateHTML');
 
+
 //get the classes 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -62,11 +63,7 @@ const addManager = () => {
         }
     ])
     .then(data => {
-        // const htmlPageContent = generateHTML(answers);
-    
-        // fs.writeFile('index.html', htmlPageContent, (err) =>
-        //   err ? console.log(err) : console.log('Successfully created index.html!')
-        // );
+
         const name = data.name;
         const id = data.id;
         const email = data.email;
@@ -75,7 +72,13 @@ const addManager = () => {
         let manager = new Manager (name, id, email, office);
         console.log(manager);
 
-      });
+        const htmlPageContent = generateHTML(manager);
+    
+        fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
+          err ? console.log(err) : console.log('Successfully created index.html!')
+        );
+
+    });
     
 }
 
