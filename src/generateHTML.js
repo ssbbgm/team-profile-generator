@@ -1,3 +1,5 @@
+const Intern = require("../lib/Intern");
+
 function renderManager (manager){
     return `
     <div class="p-2 bd-highlight">
@@ -54,11 +56,34 @@ function renderIntern(intern){
 }
 
 function allTeamMembers(team){
-    
+
+    let renderTeam = [];
+
+
+    for(let i = 0; i < team.length; i++){
+
+        const employee = team[i];
+        const role = employee.getRole();
+
+        
+       if (role === 'Manager') {
+            let managerCard = renderManager(employee);
+            renderTeam += managerCard;
+        } if (role === 'Engineer') {
+            let engineerCard = renderEngineer(employee);
+            renderTeam += engineerCard;
+        } if (role === 'Intern'){
+            let internCard = renderIntern(employee);
+            renderTeam += internCard;
+        } 
+
+        console.log(renderTeam)
+    }
+    return renderTeam
 }
 
 
-function generateHTML(team){
+function generateHTML(renderTeam){
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -86,7 +111,7 @@ function generateHTML(team){
             </header>
             
             <div class="d-flex flex-row flex-wrap justify-content-center bd-highlight mt-5 mb-3">   
-            ${renderManager(manager)}
+            ${allTeamMembers(renderTeam)}
             </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>

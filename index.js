@@ -73,15 +73,8 @@ const addManager = () => {
         const office = data.office; 
 
         let manager = new Manager (name, id, email, office);
-        console.log(manager);
 
         team.push(manager);
-
-        // const htmlPageContent = generateHTML(manager);
-    
-        // fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
-        //   err ? console.log(err) : console.log('Successfully created index.html!')
-        // );
 
     });
     
@@ -180,7 +173,7 @@ const addTeamMember = () => {
         if (role === 'Engineer'){
             let engineer = new Engineer (name, id, email, github);
             teamMember = engineer;
-        } else if (role === 'Intern') {
+        } if (role === 'Intern') {
             let intern = new Intern (name, id, email, school);
             teamMember = intern;
         }
@@ -190,7 +183,7 @@ const addTeamMember = () => {
         if (confirm) {
             addTeamMember();
         } else {
-            console.log(team);
+            return team;
         }
 
 
@@ -205,5 +198,12 @@ const addTeamMember = () => {
     
 }
 
-addManager()
-.then(addTeamMember)
+const init = () => {
+    addManager()
+    .then(addTeamMember)
+    .then(team => fs.writeFile('./dist/index.html', generateHTML(team), (err) =>
+    err ? console.log(err) : console.log('Successfully created index.html!')))
+};
+
+init();
+
