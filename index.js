@@ -12,6 +12,9 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+//place to put all team members
+let team = [];
+
 //get manager's info
 
 const addManager = () => {
@@ -72,11 +75,13 @@ const addManager = () => {
         let manager = new Manager (name, id, email, office);
         console.log(manager);
 
-        const htmlPageContent = generateHTML(manager);
+        team.push(manager);
+
+        // const htmlPageContent = generateHTML(manager);
     
-        fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
-          err ? console.log(err) : console.log('Successfully created index.html!')
-        );
+        // fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
+        //   err ? console.log(err) : console.log('Successfully created index.html!')
+        // );
 
     });
     
@@ -156,22 +161,39 @@ const addTeamMember = () => {
         },
         {
             type: 'confirm',
-            name: 'addMoreTeamMembers',
+            name: 'addMoreMembers',
             message: 'Would you like to add more team members?',
             default: false
         }
     ])
     .then(data  => {
+        const role = data.role;
         const name = data.name;
         const id = data.id;
         const email = data.email;
         const github = data.github; 
         const school = data.school;
+        const confirm = data.addMoreMembers;
 
-        let engineer = new Engineer (name, id, email, github);
-        let intern = new Intern (name, id, email, school);
+        let teamMember;
 
-        
+        if (role === 'Engineer'){
+            let engineer = new Engineer (name, id, email, github);
+            teamMember = engineer;
+        } else if (role === 'Intern') {
+            let intern = new Intern (name, id, email, school);
+            teamMember = intern;
+        }
+
+        team.push(teamMember);
+
+        if (confirm) {
+            addTeamMember();
+        } else {
+            console.log(team);
+        }
+
+
         // console.log(manager);
 
         // const htmlPageContent = generateHTML(manager);
@@ -184,4 +206,4 @@ const addTeamMember = () => {
 }
 
 addManager()
-// addTeamMember()
+.then(addTeamMember)

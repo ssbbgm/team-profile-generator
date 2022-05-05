@@ -53,8 +53,12 @@ function renderIntern(intern){
     `
 }
 
+function allTeamMembers(team){
+    
+}
 
-function generateHTML(manager){
+
+function generateHTML(team){
     return `
     <!DOCTYPE html>
     <html lang="en">
