@@ -16,6 +16,12 @@ function renderManager (manager){
     `
 } 
 
+function renderEngineer(engineer){
+    
+}
+
+
+
 function generateHTML(manager){
     return `
     <!DOCTYPE html>

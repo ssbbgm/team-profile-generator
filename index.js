@@ -59,7 +59,7 @@ const addManager = () => {
                     return console.log("Please provide the information in number form!");
                 }
                 return true;
-               }
+            }
         }
     ])
     .then(data => {
@@ -162,12 +162,23 @@ const addTeamMember = () => {
         }
     ])
     .then(data  => {
-        // const htmlPageContent = generateHTML(answers);
+        const name = data.name;
+        const id = data.id;
+        const email = data.email;
+        const github = data.github; 
+        const school = data.school;
+
+        let engineer = new Engineer (name, id, email, github);
+        let intern = new Intern (name, id, email, school);
+
+        
+        // console.log(manager);
+
+        // const htmlPageContent = generateHTML(manager);
     
-        // fs.writeFile('index.html', htmlPageContent, (err) =>
+        // fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
         //   err ? console.log(err) : console.log('Successfully created index.html!')
         // );
-        console.log(data);
       });
     
 }
