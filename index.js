@@ -170,7 +170,7 @@ const addTeamMember = () => {
 
         let teamMember;
 
-        if (role === 'Engineer'){
+        if (role === 'Engineer') {
             let engineer = new Engineer (name, id, email, github);
             teamMember = engineer;
         } if (role === 'Intern') {
@@ -182,19 +182,12 @@ const addTeamMember = () => {
 
         if (confirm) {
             addTeamMember();
+            return team;
         } else {
             return team;
         }
 
-
-        // console.log(manager);
-
-        // const htmlPageContent = generateHTML(manager);
-    
-        // fs.writeFile('./dist/index.html', htmlPageContent, (err) =>
-        //   err ? console.log(err) : console.log('Successfully created index.html!')
-        // );
-      });
+    });
     
 }
 
