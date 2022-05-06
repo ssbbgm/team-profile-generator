@@ -43,6 +43,6 @@ test('Retrieves the email from the getEmail()', () => {
 
 test('Retrieves the role of the employee from the getRole()', () => {
     const role = 'Employee';
-    const employee = new Employee('Sherreka', 10, email);
+    const employee = new Employee('Sherreka', 10, 'thegoat@test.com');
     expect(employee.getRole()).toBe(role);
 })

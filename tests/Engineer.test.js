@@ -8,7 +8,7 @@ test('Takes in string arugment for github', () => {
 
 test('Retrieves the github from the getGithub()', () => {
     const github = 'ssbbgm';
-    const employee = new Engineer('Sherreka', id, 'thegoat@test.com', github);
+    const employee = new Engineer('Sherreka', 10, 'thegoat@test.com', github);
     expect(employee.getGithub()).toBe(github);
 });
 
