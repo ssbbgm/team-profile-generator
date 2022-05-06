@@ -10,7 +10,7 @@ function renderManager (manager){
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item id">ID: ${manager.id} </li>
-                    <li class="list-group-item email">Email: ${manager.email} </li>
+                    <li class="list-group-item email">Email: <a href="mailto:${manager.email}">${manager.email} </a></li>
                     <li class="list-group-item office">Office Number: ${manager.office}</li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@ function renderEngineer(engineer){
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item id">ID: ${engineer.id}</li>
-                    <li class="list-group-item email">Email: ${engineer.email}</li>
+                    <li class="list-group-item email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
                     <li class="list-group-item github">GitHub:<a href='http://github.com/${engineer.github}' target='_blank'>${engineer.github}</a></li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@ function renderIntern(intern){
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item id">ID: ${intern.id}</li>
-                    <li class="list-group-item email">Email: ${intern.email} </li>
+                    <li class="list-group-item email">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
                     <li class="list-group-item school">School: ${intern.school}</li>
                 </ul>
             </div>
