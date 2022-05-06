@@ -21,13 +21,13 @@ This is a Node.js command-line application that takes in information about emplo
   - [Contact](#contact)
 
 ## Installation
-Please use npm i to use all the functionality of the project.
+Please use npm install to use all the functionality of the project.
 
 ## Usage
 To generate team profile information for an organization.
 
 ## Visuals
-![This is a screenshot/demo of the project.](Insert Picture or Link Info Here)
+![This is a screenshot/demo of the project.](./dist/TeamProfileGeneratorScreenShot.png)
 
 ## Tests
 
