@@ -2,5 +2,35 @@ const Employee = require('../lib/Employee');
 
 test('Creates a new employee instance', () => {
     const employee = new Employee();
-    expect(typeof(employee)).toBe('object')
-})
+    expect(typeof(employee)).toBe('object');
+});
+
+test('Takes in a string argument for name', () => {
+    const name = 'Sherreka';
+    const employee = new Employee(name);
+    expect(employee.name).toBe(name);
+});
+
+test('Takes in a number argument for id', () => {
+    const id = 10;
+    const employee = new Employee('foo', id);
+    expect(employee.id).toBe(id);
+});
+
+test('Takes in string arugment for email', () => {
+    const email = 'thegoat@test.com';
+    const employee = new Employee('foo', 10, email);
+    expect(employee.email).toBe(email);
+});
+
+test('Retrieves the name from getName()', () => {
+    const name = 'Sherreka';
+    const employee = new Employee(name, 10, 'thegoat@test.com');
+    expect(employee.getName()).toBe(employee.name);
+});
+
+test('Retrieves the id from the getID()', () => {
+    const id = 10;
+    const employee = new Employee('foo', id, 'thegoat@test.com');
+    expect(employee.getID()).toBe(employee.id);
+});
