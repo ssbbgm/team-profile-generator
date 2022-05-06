@@ -13,13 +13,13 @@ test('Takes in a string argument for name', () => {
 
 test('Takes in a number argument for id', () => {
     const id = 10;
-    const employee = new Employee('foo', id);
+    const employee = new Employee('Sherreka', id);
     expect(employee.id).toBe(id);
 });
 
 test('Takes in string arugment for email', () => {
     const email = 'thegoat@test.com';
-    const employee = new Employee('foo', 10, email);
+    const employee = new Employee('Sherreka', 10, email);
     expect(employee.email).toBe(email);
 });
 
@@ -31,6 +31,18 @@ test('Retrieves the name from getName()', () => {
 
 test('Retrieves the id from the getID()', () => {
     const id = 10;
-    const employee = new Employee('foo', id, 'thegoat@test.com');
+    const employee = new Employee('Sherreka', id, 'thegoat@test.com');
     expect(employee.getID()).toBe(employee.id);
 });
+
+test('Retrieves the email from the getEmail()', () => {
+    const email = 'thegoat@test.com';
+    const employee = new Employee('Sherreka', 10, email);
+    expect(employee.getEmail()).toBe(employee.email);
+});
+
+test('Retrieves the role of the employee from the getRole()', () => {
+    const role = 'Employee';
+    const employee = new Employee('Sherreka', 10, email);
+    expect(employee.getRole()).toBe(role);
+})
