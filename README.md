@@ -27,7 +27,9 @@ Please use npm install to use all the functionality of the project.
 To generate team profile information for an organization.
 
 ## Visuals
-![This is a screenshot/demo of the project.](./dist/TeamProfileGeneratorScreenShot.png)
+Please click on the picture below to be taken to a video demo of the project!
+
+[![This is a screenshot/demo of the project.](./dist/TeamProfileGeneratorScreenShot.png)](https://youtu.be/RW9eb2lW_yw)
 
 ## Tests
 
