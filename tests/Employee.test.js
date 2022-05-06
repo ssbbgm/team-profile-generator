@@ -26,19 +26,19 @@ test('Takes in string arugment for email', () => {
 test('Retrieves the name from getName()', () => {
     const name = 'Sherreka';
     const employee = new Employee(name, 10, 'thegoat@test.com');
-    expect(employee.getName()).toBe(employee.name);
+    expect(employee.getName()).toBe(name);
 });
 
 test('Retrieves the id from the getID()', () => {
     const id = 10;
     const employee = new Employee('Sherreka', id, 'thegoat@test.com');
-    expect(employee.getID()).toBe(employee.id);
+    expect(employee.getID()).toBe(id);
 });
 
 test('Retrieves the email from the getEmail()', () => {
     const email = 'thegoat@test.com';
     const employee = new Employee('Sherreka', 10, email);
-    expect(employee.getEmail()).toBe(employee.email);
+    expect(employee.getEmail()).toBe(email);
 });
 
 test('Retrieves the role of the employee from the getRole()', () => {
