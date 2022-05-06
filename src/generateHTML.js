@@ -76,8 +76,6 @@ function allTeamMembers(team){
             let internCard = renderIntern(employee);
             renderTeam += internCard;
         } 
-
-        console.log(renderTeam)
     }
     return renderTeam
 }
